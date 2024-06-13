@@ -1,5 +1,5 @@
 import Game.Game;
-
+import Game.GameInter;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -24,15 +24,15 @@ public class Main {
                 if (diffset.contains(diff))
                     break;
             }
-            Game a = new Game(diff, name);
-            //
+            GameInter a = new Game(diff, name);
+            a.introduceFighter();
             System.out.print("캐릭터를 골라주세요");
             String fighter = scanner.next();//
             a.chooseFighter(fighter);
             String stop = "";
             while (!stop.equals("그만")) {
                 System.out.print("스테이지가 생성됩니다.");
-                a.makestage();
+                a.makeStage();
                 stop = a.inCombat();
                 if (stop.equals("그만"))
                     break;
@@ -40,7 +40,7 @@ public class Main {
                 stop = scanner.next();
 
             }
-            a.endgame();
+            a.endGame();
             System.out.print("다시 시작하시려면 다시를 입력해주세요");
             regame = scanner.next();
         }
