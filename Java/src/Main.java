@@ -24,10 +24,10 @@ public class Main {
                 if (diffset.contains(diff))
                     break;
             }
-            GameInter a = new Game(diff, name);
+            GameInter a = Game.createInstance(diff,name);
             a.introduceFighter();
             System.out.print("캐릭터를 골라주세요");
-            String fighter = scanner.next();//
+            String fighter = scanner.next();
             a.chooseFighter(fighter);
             String stop = "";
             while (!stop.equals("그만")) {

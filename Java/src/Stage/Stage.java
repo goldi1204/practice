@@ -41,13 +41,6 @@ public class Stage implements StageInter{
         Scanner scanner = new Scanner(System.in);
         System.out.println("적의 체력: " + enemy.getResource().get("HP"));
         System.out.println("나의 체력: " + user.getResource().get("HP"));
-        while(true) {
-            System.out.print("상대방의 카드를 보실려면 enemy를 입력하고 자신의 카드를 보려면 user를 입력하세요\n카드고르기로 가려면 n을 눌러주세요.\n");
-            String word = scanner.next();
-            if(word.equals("enemy")) enemy.showInventory();
-            else if(word.equals("user")) user.showInventory();
-            else if(word.equals("n")) break;
-        }
         //입력을 받고 상대방 카드를 보여주거나 내카드를 보여주거나 카드를 골랐다면 다음 흐름으로
         Card[] userCard = user.chooseCards(false);
         Card[] enemyCard = enemy.chooseCards(true);

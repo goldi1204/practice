@@ -9,7 +9,7 @@ public class 탱커 extends Fighter implements FighterInter{
     public 탱커() {
 
         resource = new HashMap<>();
-        resource.put("HP", 200); // 체력
+        resource.put("HP", 100); // 체력
         resource.put("Defense", 50); // 방어력
         deckSet = new HashSet<>();
         deckSet.add(new HealCard());

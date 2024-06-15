@@ -138,4 +138,39 @@ public class Game implements GameInter{
     public void endGame() {
         System.out.print(name+"\nYour rank is" +rank);
     }
+    public static GameInter createInstance(String difficulty, String name) {
+        Game gameInstance = new Game(difficulty, name);
+
+        return new GameInter() {
+            @Override
+            public void introduceFighter() {
+                gameInstance.introduceFighter();
+            }
+
+            @Override
+            public void chooseFighter(String fighterName) {
+                gameInstance.chooseFighter(fighterName);
+            }
+
+            @Override
+            public void makeStage() {
+                gameInstance.makeStage();
+            }
+
+            @Override
+            public String inCombat() {
+                return gameInstance.inCombat();
+            }
+
+            @Override
+            public void endStage() {
+                gameInstance.endStage();
+            }
+
+            @Override
+            public void endGame() {
+                gameInstance.endGame();
+            }
+        };
+    }
 }

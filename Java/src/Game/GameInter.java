@@ -1,7 +1,5 @@
 package Game;
-import Fighter.Fighter;
 
-import java.util.Set;
 
 public interface GameInter { //난이도 설정
     void introduceFighter();
@@ -11,5 +9,6 @@ public interface GameInter { //난이도 설정
     void endStage();
     void endGame();//show rank
 }
+
 
 

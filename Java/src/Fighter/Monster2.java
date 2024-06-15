@@ -11,7 +11,7 @@ public class Monster2 extends Fighter implements FighterInter {
 
         public Monster2() {
             resource = new HashMap<>();
-            resource.put("HP",100); // 체력
+            resource.put("HP",50); // 체력
             resource.put("Defense", 50); // 방어력
             deckSet = new HashSet<>();
             deckSet.add(new HealCard());
@@ -21,7 +21,7 @@ public class Monster2 extends Fighter implements FighterInter {
             deckList.add(new Fire2Card());
             deckList.add(new HealCard());
             if(resource.get("HP")<0){
-                resource.put("HP", 100);
+                resource.put("HP", 50);
             }
             // 몬스터가 사용할 카드를 초기화할 수 있습니다.
             // 예를 들어:

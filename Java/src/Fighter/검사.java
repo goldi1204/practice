@@ -10,7 +10,7 @@ public class 검사 extends Fighter implements FighterInter{
     public 검사() {
 
         resource = new HashMap<>();
-        resource.put("HP", 100); // 체력
+        resource.put("HP", 50); // 체력
         resource.put("Defense", 50); // 방어력
         deckSet = new HashSet<>();
         deckSet.add(new HealCard());

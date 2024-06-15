@@ -61,7 +61,13 @@ public abstract class Fighter implements FighterInter {
             Set<Integer> selectedCard = new HashSet<>();
             while (true) {
                 String selectCard = scanner.next();
+
+
                 if (selectCard.equals(";")) break;
+                else if (selectCard.equals("enemy"))
+                    showInventory();
+                else if(selectCard.equals("user"))
+                    showInventory();
                 else {
                     try {
                         int selectedIndex = Integer.parseInt(selectCard)-1;
@@ -105,7 +111,6 @@ public abstract class Fighter implements FighterInter {
         //구현 완료
     }
 
-
     @Override
     public void setFighterResource(Map<String, Integer> change) {
         resource.put("HP", getResource().get("HP")+change.get("HP"));
@@ -114,13 +119,18 @@ public abstract class Fighter implements FighterInter {
 
     @Override
     public void showInventory() {
-
     }
 
     @Override
     public void getreward(Card reward) {
         deckList.add(reward);
-        System.out.println("Received a new card!");
+        Map<String, List<Integer>> cardInform = reward.getCardInform();
+        for (Map.Entry<String, List<Integer>>oneCard : cardInform.entrySet()) {
+            String key = oneCard.getKey();
+            List<Integer> values = oneCard.getValue();
+            int firstvalue = values.get(0);
+            System.out.println("몬스터가 갖고 있던 \"" +key+ "\" 카드를 보상받았습니다.\nCard : "+key + ", Damage : "+firstvalue);
+        }
         //카드를 추가
     }
 }

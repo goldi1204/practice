@@ -6,3 +6,4 @@ public interface CardInter {
     Map<String,List<Integer>> getCardInform();
 }
 
+
